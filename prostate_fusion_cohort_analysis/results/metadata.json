@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-10-20T22:32:51+00:00",
+  "api_base": "https://www.cbioportal.org/api",
+  "genes": [
+    "ERG",
+    "RAI2",
+    "CTBP1",
+    "CTBP2"
+  ],
+  "studies": [
+    {
+      "label": "TCGA PanCancer Atlas",
+      "study_id": "prad_tcga_pan_can_atlas_2018",
+      "expression_profile_id": "prad_tcga_pan_can_atlas_2018_rna_seq_v2_mrna",
+      "structural_variant_profile_id": "prad_tcga_pan_can_atlas_2018_structural_variants",
+      "grouping_source": "structural_variants",
+      "analysis_transform": "legacy_r_decimal_stripping"
+    },
+    {
+      "label": "SU2C/PCF Dream Team (2019 capture)",
+      "study_id": "prad_su2c_2019",
+      "expression_profile_id": "prad_su2c_2019_mrna_seq_fpkm_capture",
+      "structural_variant_profile_id": "prad_su2c_2019_structural_variants",
+      "grouping_source": "clinical_ets",
+      "analysis_transform": "log2"
+    }
+  ],
+  "reproduction_notes": {
+    "tcga": "The supplied R script removes decimal points before numeric conversion; thesis_analysis_value reproduces that rule.",
+    "su2c": "Uses prad_su2c_2019 capture FPKM data and ETS clinical grouping; named non-TMPRSS2-ERG fusions are excluded.",
+    "machine_learning": "log2_expression retains the corrected direct log2(value + 1) transformation."
+  }
+}

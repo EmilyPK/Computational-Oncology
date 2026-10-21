@@ -1,0 +1,2 @@
+-r requirements-ml.txt
+jupyterlab>=4,<5

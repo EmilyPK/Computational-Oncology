@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-10-20T17:06:04+00:00",
+  "pytorch_version": "2.14.1+cpu",
+  "configuration": {
+    "seed": 42,
+    "validation_fraction": 0.2,
+    "hidden_units": 8,
+    "dropout": 0.1,
+    "learning_rate": 0.01,
+    "weight_decay": 0.001,
+    "batch_size": 32,
+    "maximum_epochs": 500,
+    "patience": 40
+  },
+  "experiments": {
+    "primary": {
+      "features": [
+        "RAI2",
+        "CTBP1",
+        "CTBP2"
+      ],
+      "development_cohort": "prad_tcga_pan_can_atlas_2018",
+      "external_cohort": "prad_su2c_2015",
+      "sample_counts": {
+        "train": 394,
+        "validation": 99,
+        "external": 118
+      },
+      "best_epoch": 33,
+      "epochs_run": 73,
+      "standardizer": {
+        "feature_names": [
+          "RAI2",
+          "CTBP1",
+          "CTBP2"
+        ],
+        "means": [
+          9.062314237849211,
+          11.697292533959928,
+          11.150876695592846
+        ],
+        "standard_deviations": [
+          0.7758798550210669,
+          0.4029836144429731,
+          0.40798422075048885
+        ]
+      },
+      "metrics": {
+        "validation": {
+          "n": 99,
+          "positives": 38,
+          "negatives": 61,
+          "accuracy": 0.5353535353535354,
+          "balanced_accuracy": 0.5336496980155306,
+          "sensitivity": 0.5263157894736842,
+          "specificity": 0.5409836065573771,
+          "precision": 0.4166666666666667,
+          "f1": 0.46511627906976744,
+          "roc_auc": 0.6203623813632442,
+          "brier_score": 0.22984426296717095,
+          "true_positive": 20,
+          "true_negative": 33,
+          "false_positive": 28,
+          "false_negative": 18
+        },
+        "external": {
+          "n": 118,
+          "positives": 48,
+          "negatives": 70,
+          "accuracy": 0.5932203389830508,
+          "balanced_accuracy": 0.5,
+          "sensitivity": 0.0,
+          "specificity": 1.0,
+          "precision": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.6169642857142857,
+          "brier_score": 0.4067794847100497,
+          "true_positive": 0,
+          "true_negative": 70,
+          "false_positive": 0,
+          "false_negative": 48
+        }
+      }
+    },
+    "marker_inclusive_control": {
+      "features": [
+        "ERG",
+        "RAI2",
+        "CTBP1",
+        "CTBP2"
+      ],
+      "development_cohort": "prad_tcga_pan_can_atlas_2018",
+      "external_cohort": "prad_su2c_2015",
+      "sample_counts": {
+        "train": 394,
+        "validation": 99,
+        "external": 118
+      },
+      "best_epoch": 46,
+      "epochs_run": 86,
+      "standardizer": {
+        "feature_names": [
+          "ERG",
+          "RAI2",
+          "CTBP1",
+          "CTBP2"
+        ],
+        "means": [
+          9.602142717367363,
+          9.062314237849211,
+          11.697292533959928,
+          11.150876695592846
+        ],
+        "standard_deviations": [
+          2.4839227334396865,
+          0.7758798550210669,
+          0.4029836144429731,
+          0.40798422075048885
+        ]
+      },
+      "metrics": {
+        "validation": {
+          "n": 99,
+          "positives": 38,
+          "negatives": 61,
+          "accuracy": 0.9393939393939394,
+          "balanced_accuracy": 0.9408973252804141,
+          "sensitivity": 0.9473684210526315,
+          "specificity": 0.9344262295081968,
+          "precision": 0.9,
+          "f1": 0.9230769230769231,
+          "roc_auc": 0.9827437446074202,
+          "brier_score": 0.05206133814383233,
+          "true_positive": 36,
+          "true_negative": 57,
+          "false_positive": 4,
+          "false_negative": 2
+        },
+        "external": {
+          "n": 118,
+          "positives": 48,
+          "negatives": 70,
+          "accuracy": 0.5932203389830508,
+          "balanced_accuracy": 0.5,
+          "sensitivity": 0.0,
+          "specificity": 1.0,
+          "precision": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.8288690476190477,
+          "brier_score": 0.4067796610169332,
+          "true_positive": 0,
+          "true_negative": 70,
+          "false_positive": 0,
+          "false_negative": 48
+        }
+      }
+    }
+  }
+}
