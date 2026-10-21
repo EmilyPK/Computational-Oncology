@@ -1,0 +1,31 @@
+```yaml
+name: Tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    name: ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - prostate_fusion_cohort_analysis
+          - rai2_cohort_regression
+          - ML-Beispiel
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        working-directory: ${{ matrix.project }}
+        run: python -m unittest discover -s tests -v
+```
+`checkout@v7` und `setup-python@v7` sind die aktuell vorgesehenen Versionen der offiziellen GitHub-Actions: [checkout](https://github.com/actions/checkout), [setup-python](https://github.com/actions/setup-python).
