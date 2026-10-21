@@ -2,7 +2,6 @@
 # FINAL VERSION - TCGA links / SUC rechts
 # SUC-Y-Achse: 0-15 | TCGA-Y-Achse: 10-25
 # p-Werte als Signifikanzsterne; Mittelwert und Median markiert
-# Unveraenderte physische Hoehe je 5er-Schritt
 # ============================================================
 
 # ============================================================
@@ -16,7 +15,7 @@ library(gridExtra)
 library(grid)
 
 # ============================================================
-# 1. Gemeinsame Einstellungen
+# 1. Generelle Einstellungen
 # ============================================================
 
 gene_names <- c(
@@ -289,7 +288,7 @@ tcga$Group <- factor(
 )
 
 # ============================================================
-# 4. Gruppengroessen ausgeben
+# 4. Gruppengrößen ausgeben
 # ============================================================
 
 cat("\n==================================================\n")
@@ -598,7 +597,7 @@ plot_gene <- function(
 }
 
 # ============================================================
-# 9. Alle acht Panels erzeugen
+# 9. Alle acht Diagramme erzeugen
 # ============================================================
 
 suc_plots <- lapply(
@@ -628,7 +627,7 @@ tcga_plots <- lapply(
 )
 
 # ============================================================
-# 10. TCGA links / SUC rechts zusammenfuehren
+# 10. TCGA links / SUC rechts
 # ============================================================
 #
 # Die beiden Plot-GTables werden horizontal zu EINER GTable verbunden.
@@ -704,10 +703,10 @@ combined_rows <- lapply(
 )
 
 # ============================================================
-# 11. Ueberschriften SUC und TCGA
+# 11. Überschriften
 # ============================================================
 
-# Die Ueberschriften werden ueber den tatsaechlichen Panelspalten platziert.
+# Die Überschriften werden ueber den tatsächlichen Panelspalten platziert.
 panel_columns <- combined_rows[[1]]$layout$l[
   combined_rows[[1]]$layout$name == "panel"
 ]
@@ -733,7 +732,7 @@ header_pair <- gtable::gtable_add_grob(
   clip = "off"
 )
 
-# Gemeinsame Legende fuer die Lageparameter, ohne die Panels zu verkleinern.
+# Gemeinsame Legende für die Lageparameter, ohne die Panels zu verkleinern.
 summary_key <- grid::grobTree(
   grid::pointsGrob(
     x = unit(1, "npc") - unit(59, "pt"),
@@ -825,7 +824,7 @@ grid.draw(
 )
 
 # ============================================================
-# 14. PDF speichern
+# 14. Abbildung als PDF speichern
 # ============================================================
 
 ggsave(
