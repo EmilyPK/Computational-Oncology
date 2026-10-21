@@ -19,9 +19,8 @@ The main example is in
 4. [`pytorch_ml_walkthrough.ipynb`](prostate_fusion_cohort_analysis/pytorch_ml_walkthrough.ipynb)
    contains a small PyTorch extension.
 
-The R script uses local cBioPortal exports. The Python version was written
-afterwards and retrieves the public data through the cBioPortal API. The Python
-and PyTorch code was not used to generate the submitted thesis.
+The R script uses local cBioPortal exports. 
+The Python version was written afterwards and retrieves the public data through the cBioPortal API. 
 
 ## Additional experiments
 
